@@ -40,6 +40,17 @@ def checkWinner():
         messagebox.showinfo("TicTacToe","Speletajs O ir uzvarētājs")
     elif count==9 and winner==False:        
         messagebox.showinfo("TicTacToe", "Neizšķirts")
+    return 0
+def disableButtons():
+    btn1.config(state=DISABLED)
+    btn2.config(state=DISABLED)
+    btn3.config(state=DISABLED)
+    btn4.config(state=DISABLED)
+    btn5.config(state=DISABLED)
+    btn6.config(state=DISABLED)
+    btn7.config(state=DISABLED)
+    btn8.config(state=DISABLED)
+    btn9.config(state=DISABLED)
 
 mansLogs=Tk()
 mansLogs.title("TicTacToe")
