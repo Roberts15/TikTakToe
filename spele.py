@@ -1,6 +1,10 @@
 from tkinter import *
 from tkinter import messagebox #paziņojumi, ieteikumi​
 
+speletajsX=True #kuram spēlētājam kārta spēlēt, liks krustiņus​
+count=0 #aizpildīto rūtiņu skaits
+winner=False
+
 def btnClick(button): #padod pogu​
     global speletajsX,count #kādi mainīgie tiks izmantoti​
     if button["text"]==" "and speletajsX==True:#spēlē X spēlētājs​
@@ -15,7 +19,7 @@ def btnClick(button): #padod pogu​
         messagebox.showerror("TicTacToe","Šeit kāds ir ieklikšķinājis!")
     return 0
 def checkWinner():
-    global winner
+    global winner 
     if (btn1["text"]=="X"and btn4["text"]=="X" and btn7["text"]=="X" or
      btn2["text"]=="X"and btn5["text"]=="X" and btn8["text"]=="X" or 
      btn3["text"]=="X"and btn6["text"]=="X" and btn9["text"]=="X"or
@@ -54,15 +58,15 @@ def disableButtons():
 
 mansLogs=Tk()
 mansLogs.title("TicTacToe")
-btn1=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn2=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn3=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn4=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn5=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn6=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn7=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn8=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
-btn9=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24))
+btn1=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick())
+btn2=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(2))
+btn3=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(3))
+btn4=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(4))
+btn5=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(5))
+btn6=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(6))
+btn7=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(7))
+btn8=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(8))
+btn9=Button(mansLogs,text=" ",width=6,height=3,font=('Helvica',24), command=btnClick(9))
 
 btn1.grid(row=1,column=1)
 btn2.grid(row=1,column=2)
