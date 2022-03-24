@@ -9,11 +9,16 @@ def btnClick(button): #padod pogu​
     global speletajsX,count #kādi mainīgie tiks izmantoti​
     if button["text"]==" "and speletajsX==True:#spēlē X spēlētājs​
         button["text"]="x" #maina uz X​
+        button["fg"]="red"
+        button["bg"]="dark gray"
         speletajsX=False
         count+=1 # palielina rūtiņu skaitu​
         checkWinner()
     elif button["text"]==" " and speletajsX==False: # mainās spēlētāji​
         button["text"]="o"
+        button["fg"]="green"
+        button["bg"]="dark gray"
+        #button.config(state=DISABLED)
         speletajsX=True
         count+=1
         checkWinner()
